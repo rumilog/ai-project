@@ -1,0 +1,42 @@
+# Training parameters
+train:
+  total_timesteps: 10000
+  seed: 42
+  log_dir: "./logs"
+  save_dir: "./models"
+
+# DQN specific parameters
+dqn:
+  learning_rate: 0.0001
+  buffer_size: 10000
+  learning_starts: 1000
+  batch_size: 64
+  gamma: 0.99
+  tau: 1.0
+  target_update_interval: 500
+  exploration_fraction: 0.1
+  exploration_initial_eps: 1.0
+  exploration_final_eps: 0.05
+
+# PPO specific parameters
+ppo:
+  learning_rate: 0.0003
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+
+# Environment parameters
+env:
+  id: "CartPole-v1"
+  n_envs: 1
+
+# Evaluation parameters
+eval:
+  n_episodes: 20
+  deterministic: true 
